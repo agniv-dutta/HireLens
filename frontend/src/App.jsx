@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import candidatesData from '@data/results.json';
+import candidatesData from './data/results.json';
 import Header from './components/Header';
 import SummaryBar from './components/SummaryBar';
 import FilterBar from './components/FilterBar';
