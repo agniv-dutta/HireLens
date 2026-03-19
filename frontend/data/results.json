@@ -1,0 +1,66 @@
+[
+  {
+    "candidate_name": "Priya Sharma",
+    "match_score": 91,
+    "strengths": ["5+ years React/Node.js experience", "Led cross-functional teams of 10+", "Published open-source contributions"],
+    "gaps": ["No cloud certifications", "Limited data engineering background", "No mobile development experience"],
+    "recommendation": "Strong Fit",
+    "summary": "Priya is a highly experienced full-stack engineer with strong leadership skills and a proven track record in agile environments. Excellent cultural fit."
+  },
+  {
+    "candidate_name": "Rohan Mehta",
+    "match_score": 78,
+    "strengths": ["Strong Python and ML skills", "Completed 3 NLP research papers", "Fast learner with startup experience"],
+    "gaps": ["Limited frontend exposure", "No production deployment experience at scale", "Short tenure at previous roles"],
+    "recommendation": "Strong Fit",
+    "summary": "Rohan brings strong data science capabilities and research depth. A few gaps in production engineering, but high growth potential."
+  },
+  {
+    "candidate_name": "Ananya Krishnan",
+    "match_score": 65,
+    "strengths": ["Strong UX design portfolio", "Proficient in Figma and Adobe XD", "Good communication skills"],
+    "gaps": ["No engineering background", "Unfamiliar with agile methodology", "Limited B2B SaaS exposure"],
+    "recommendation": "Moderate Fit",
+    "summary": "Ananya has a solid design foundation and creative eye. Some process misalignment with our engineering-heavy workflow may require onboarding investment."
+  },
+  {
+    "candidate_name": "Liam O'Brien",
+    "match_score": 82,
+    "strengths": ["DevOps expertise with Kubernetes and Terraform", "Reduced infrastructure costs by 40%", "Strong security mindset"],
+    "gaps": ["No direct people management experience", "Limited experience with our tech stack", "Based overseas (timezone considerations)"],
+    "recommendation": "Strong Fit",
+    "summary": "Liam is a seasoned DevOps engineer with measurable impact. Strong technical alignment, minor concerns around management readiness and timezone overlap."
+  },
+  {
+    "candidate_name": "Sofia Reyes",
+    "match_score": 55,
+    "strengths": ["Bilingual (English/Spanish)", "Strong project management background", "PMP certified"],
+    "gaps": ["No technical depth in software development", "Minimal data-driven decision experience", "Limited SaaS product exposure"],
+    "recommendation": "Moderate Fit",
+    "summary": "Sofia's project management skills are strong, but the role requires deeper technical acumen than her background reflects. Could be a fit for a PM track."
+  },
+  {
+    "candidate_name": "David Chen",
+    "match_score": 38,
+    "strengths": ["Enthusiastic and motivated", "Good academic record", "Internship experience at a mid-size firm"],
+    "gaps": ["Only 1 year of professional experience", "No leadership or ownership history", "Skill set too junior for the role"],
+    "recommendation": "Not Fit",
+    "summary": "David shows promise but is significantly underqualified for this senior role. Consider revisiting in 2-3 years or for a junior opening."
+  },
+  {
+    "candidate_name": "Meera Pillai",
+    "match_score": 88,
+    "strengths": ["Expert in distributed systems", "Built high-availability APIs serving 10M+ users", "Mentored 5 junior engineers"],
+    "gaps": ["No front-end exposure", "Prefers backend-only roles", "Contract-only availability"],
+    "recommendation": "Strong Fit",
+    "summary": "Meera is technically exceptional with a strong system design background. Contract-only preference is the primary consideration for a full-time role."
+  },
+  {
+    "candidate_name": "James Kowalski",
+    "match_score": 42,
+    "strengths": ["Strong sales background", "Great at client-facing communication", "High energy and self-motivated"],
+    "gaps": ["No technical background", "Unrelated industry experience", "Role mismatch — engineering vs sales"],
+    "recommendation": "Not Fit",
+    "summary": "James's profile is strong but is a fundamental mismatch for an engineering role. His skills would be better suited to a sales or solutions engineering position."
+  }
+]
