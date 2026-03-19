@@ -2,8 +2,8 @@ import json
 import os
 from pathlib import Path
 
-from anthropic import Anthropic
 from dotenv import load_dotenv
+import google.generativeai as genai
 
 from utils import extract_text_from_pdf, extract_text_from_txt
 
@@ -12,7 +12,7 @@ RECOMMENDATIONS = {"Strong Fit", "Moderate Fit", "Not Fit"}
 
 
 def _build_user_prompt(job_description, resume_text, resume_filename):
-    """Build the user message asking Claude for strict JSON output."""
+    """Build the user message asking Gemini for strict JSON output."""
     return (
         "Analyze the resume against the job description and return exactly one JSON object.\n"
         "Do not include any extra keys and ensure valid JSON.\n\n"
@@ -101,30 +101,23 @@ def _validate_candidate_schema(candidate, fallback_name):
     return cleaned
 
 
-def _screen_single_resume(client, model, job_description, resume_path):
-    """Call Claude for one resume and return validated candidate JSON."""
+def _screen_single_resume(model, job_description, resume_path):
+    """Call Gemini for one resume and return validated candidate JSON."""
     resume_text = _extract_resume_text(resume_path)
 
     if not resume_text:
         raise ValueError(f"Resume appears empty: {resume_path.name}")
 
-    response = client.messages.create(
-        model=model,
-        max_tokens=700,
-        temperature=0,
-        system=_get_system_prompt(),
-        messages=[
-            {
-                "role": "user",
-                "content": _build_user_prompt(job_description, resume_text, resume_path.name),
-            }
-        ],
+    response = model.generate_content(
+        _build_user_prompt(job_description, resume_text, resume_path.name),
+        generation_config={
+            "temperature": 0,
+            "max_output_tokens": 700,
+            "response_mime_type": "application/json",
+        },
     )
 
-    response_text = ""
-    for block in response.content:
-        if getattr(block, "type", None) == "text":
-            response_text += block.text
+    response_text = (getattr(response, "text", "") or "").strip()
 
     if not response_text.strip():
         raise ValueError(f"Empty model response for {resume_path.name}")
@@ -141,17 +134,20 @@ def _screen_single_resume(client, model, job_description, resume_path):
 def run_screening(
     resumes_dir="backend/data/resumes",
     jd_path="backend/data/jd.txt",
-    model="claude-sonnet-4-20250514",
+    model="gemini-2.0-flash",
 ):
     """Screen all resumes in a directory and return sorted candidate results plus errors."""
     load_dotenv()
 
-    api_key = os.getenv("ANTHROPIC_API_KEY", "").strip()
+    api_key = os.getenv("GEMINI_API_KEY", "").strip()
     if not api_key or api_key == "your_key_here":
         raise RuntimeError(
-            "ANTHROPIC_API_KEY is missing or placeholder in backend/.env. "
+            "GEMINI_API_KEY is missing or placeholder in backend/.env. "
             "Please set a valid API key."
         )
+
+    # Configure Gemini client from environment for all subsequent calls.
+    genai.configure(api_key=api_key)
 
     jd_file = Path(jd_path)
     if not jd_file.exists():
@@ -172,7 +168,10 @@ def run_screening(
     if not supported_files:
         raise ValueError("No supported resume files found in backend/data/resumes (expected .pdf or .txt).")
 
-    client = Anthropic(api_key=api_key)
+    model_instance = genai.GenerativeModel(
+        model,
+        system_instruction=_get_system_prompt(),
+    )
 
     results = []
     errors = []
@@ -180,8 +179,7 @@ def run_screening(
     for resume_file in supported_files:
         try:
             candidate = _screen_single_resume(
-                client=client,
-                model=model,
+                model=model_instance,
                 job_description=job_description,
                 resume_path=resume_file,
             )

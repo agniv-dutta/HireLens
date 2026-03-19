@@ -1,0 +1,17 @@
+Alex Carter
+Email: alex.carter@example.com
+Location: Bengaluru
+
+Summary:
+Software engineer with 3 years of experience in Python backend development, REST APIs, SQL, and cloud deployment.
+
+Skills:
+Python, FastAPI, Flask, PostgreSQL, Docker, Git, CI/CD, AWS
+
+Experience:
+- Built internal hiring dashboard using Python and PostgreSQL, reducing review time by 30%.
+- Implemented resume parsing pipeline for HR analytics using text extraction and rule-based scoring.
+- Collaborated with product and recruiting teams to align feature requirements and reporting.
+
+Education:
+B.Tech in Computer Science

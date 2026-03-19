@@ -17,7 +17,7 @@ HireLens/
 │   │   ├── results.json    # structured output consumed by frontend
 │   │   └── results.csv     # optional reference output
 │   ├── requirements.txt
-│   └── .env                # ANTHROPIC_API_KEY lives here
+│   └── .env                # GEMINI_API_KEY lives here
 ├── frontend/
 │   └── placeholder.txt
 └── README.md
@@ -35,7 +35,7 @@ pip install -r backend/requirements.txt
 3. Add your key in `backend/.env`:
 
 ```env
-ANTHROPIC_API_KEY=your_real_key_here
+GEMINI_API_KEY=your_real_key_here
 ```
 
 4. Paste your target job description in `backend/data/jd.txt`.
@@ -48,7 +48,7 @@ python backend/main.py
 ```
 
 The backend will:
-- Call Claude (`claude-sonnet-4-20250514`) for each resume
+- Call Gemini (`gemini-2.0-flash`) for each resume
 - Rank candidates by `match_score`
 - Write output to `backend/output/results.json` and `backend/output/results.csv`
 - Print a summary table in the terminal
