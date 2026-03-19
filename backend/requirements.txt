@@ -1,0 +1,4 @@
+anthropic
+pdfplumber
+python-dotenv
+rich
