@@ -8,12 +8,12 @@
       "Excellent prompt engineering skills"
     ],
     "gaps": [
-      "Limited experience with no-code/low-code tools",
-      "No direct experience with data visualization",
-      "No prior internship experience in HR Tech"
+      "Limited experience with data visualization tools",
+      "No direct experience with no-code/low-code tools beyond Zapier basics",
+      "No prior internship experience in a corporate setting"
     ],
     "recommendation": "Strong Fit",
-    "summary": "Sophie Davis is a highly skilled AI/ML engineer with extensive experience in LLM APIs and automation pipelines, making her a strong fit for the AI Automation Intern role. She has a strong portfolio and relevant project experience."
+    "summary": "Sophie Davis is a highly skilled AI/ML engineer with extensive experience in LLM APIs and automation pipelines, making her a strong fit for the AI Automation Intern role. Her skills and experience align well with the job requirements."
   },
   {
     "candidate_name": "Raj Kumar",
@@ -26,10 +26,10 @@
     "gaps": [
       "Limited experience with no-code/low-code tools",
       "No direct experience with automation tools like Zapier or Make",
-      "No prior experience in data visualization with Power BI or Google Sheets"
+      "No prior experience in AI/ML-specific internships"
     ],
     "recommendation": "Strong Fit",
-    "summary": "Raj Kumar is a strong fit for the AI Automation Intern role with his solid Python skills and experience with LLM APIs. He has a good grasp of REST APIs and basic cloud concepts, making him a promising candidate."
+    "summary": "Raj Kumar is a strong candidate with a solid foundation in Python and experience with REST APIs, making him a good fit for the AI Automation Intern role. He also has relevant project experience with AI and API integration."
   },
   {
     "candidate_name": "Nina Gupta",
@@ -40,28 +40,28 @@
       "Data visualization expertise"
     ],
     "gaps": [
-      "Limited experience with LLM APIs",
-      "No direct experience in AI/ML",
-      "Non-CS background"
+      "LLM API familiarity",
+      "REST API understanding",
+      "No-code/low-code tool experience"
     ],
     "recommendation": "Moderate Fit",
-    "summary": "Nina Gupta has relevant skills in Python and data visualization, but may require additional training in LLM APIs and AI/ML. Her experience in automation and data analysis is a strong asset."
+    "summary": "Nina Gupta has relevant experience in Python and data visualization, but lacks direct experience with LLM APIs and no-code tools. She can still be a good fit with some training and mentorship."
   },
   {
     "candidate_name": "Alex Carter",
     "match_score": 70,
     "strengths": [
-      "Python experience",
-      "API integration skills",
-      "Data analysis background"
+      "Python skills",
+      "Experience with REST APIs",
+      "Backend development expertise"
     ],
     "gaps": [
       "LLM API familiarity",
-      "No-code tool experience",
-      "Data visualization skills"
+      "Data visualization experience",
+      "No-code/low-code tool knowledge"
     ],
     "recommendation": "Moderate Fit",
-    "summary": "Alex has relevant Python experience and data analysis skills, but lacks specific LLM API and no-code tool experience. With some training, Alex could be a good fit for the AI Automation Intern role."
+    "summary": "Alex has relevant Python and backend development experience, but lacks specific skills in LLM APIs and data visualization. With some training, Alex could be a good fit for the AI Automation Intern role."
   },
   {
     "candidate_name": "James Wilson",
@@ -77,39 +77,39 @@
       "No direct experience with LLM APIs"
     ],
     "recommendation": "Moderate Fit",
-    "summary": "James has strong no-code automation skills, but lacks programming experience and direct experience with required technologies like Python and LLM APIs. He could be a good fit with additional training and mentorship."
+    "summary": "James Wilson has strong no-code/low-code skills, but lacks programming experience and direct experience with required technologies like Python and LLM APIs. He could be a good fit with additional training and mentorship."
   },
   {
     "candidate_name": "Marco Rossi",
     "match_score": 40,
     "strengths": [
-      "Strong Python skills",
-      "Experience with REST APIs",
-      "Background in Computer Science"
+      "Python skills",
+      "experience with REST APIs",
+      "strong backend development background"
     ],
     "gaps": [
-      "Limited exposure to LLM APIs",
-      "No experience with AI automation",
-      "Lack of data visualization skills"
+      "limited exposure to LLM APIs",
+      "no experience with AI automation",
+      "lack of data visualization skills"
     ],
     "recommendation": "Not Fit",
-    "summary": "Marco Rossi has strong Python skills, but his experience is primarily in backend services and lacks exposure to modern LLM APIs and AI automation, making him a poor fit for the AI Automation Intern role."
+    "summary": "Marco Rossi has a strong Python background but lacks experience in AI automation and LLM APIs, making him a poor fit for the AI Automation Intern role."
   },
   {
     "candidate_name": "Meera Pillai",
     "match_score": 40,
     "strengths": [
-      "Strong Python skills",
-      "Experience with REST APIs",
-      "System design expertise"
+      "Python skills",
+      "API design experience",
+      "system architecture expertise"
     ],
     "gaps": [
-      "Lack of experience with LLM APIs",
-      "No prior experience in AI/ML",
-      "No familiarity with no-code/low-code tools"
+      "LLM API familiarity",
+      "no-code/low-code tool experience",
+      "data visualization knowledge"
     ],
     "recommendation": "Not Fit",
-    "summary": "Meera Pillai has strong backend engineering skills, but lacks experience in AI automation and LLM APIs, making her a poor fit for the AI Automation Intern role."
+    "summary": "Meera Pillai has strong backend engineering skills, but lacks direct experience in AI automation and LLM integration, making her a less suitable fit for the AI Automation Intern role."
   },
   {
     "candidate_name": "Priya Sharma",
@@ -117,30 +117,30 @@
     "strengths": [
       "Strong system design skills",
       "Leadership experience",
-      "Proficiency in Python"
+      "Python programming skills"
     ],
     "gaps": [
       "Lack of experience with LLM APIs",
       "No prior experience in AI/ML",
-      "Limited knowledge of data visualization"
+      "No familiarity with no-code/low-code tools"
     ],
     "recommendation": "Not Fit",
-    "summary": "Priya Sharma has strong technical skills, but lacks direct experience in AI automation and LLM APIs, making her a less suitable fit for the AI Automation Intern role."
+    "summary": "Priya Sharma is a full-stack developer with strong system design skills, but lacks experience in AI/ML and LLM APIs, making her a poor fit for the AI Automation Intern role."
   },
   {
     "candidate_name": "Liam O'Brien",
     "match_score": 20,
     "strengths": [
-      "Strong programming skills",
+      "Strong Python skills",
       "Experience with cloud infrastructure",
       "Security mindset"
     ],
     "gaps": [
-      "Lack of AI/ML experience",
-      "No familiarity with LLM APIs",
-      "No experience with automation tools"
+      "Lack of experience with LLM APIs",
+      "No prior experience in AI/ML",
+      "No knowledge of data visualization tools"
     ],
     "recommendation": "Not Fit",
-    "summary": "Liam O'Brien is a DevOps engineer with strong infrastructure expertise, but lacks experience in AI/ML and automation, making him a poor fit for the AI Automation Intern role."
+    "summary": "Liam O'Brien is a DevOps engineer with strong infrastructure expertise, but lacks experience in AI/ML and LLM APIs, making him a poor fit for the AI Automation Intern role."
   }
 ]
