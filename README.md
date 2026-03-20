@@ -334,6 +334,14 @@ Edit `utils.py` and `screener.py` to support additional file types (e.g., `.docx
 
 ---
 
+## Demo Video
+
+Watch the HireLens walkthrough demo here:
+
+https://youtu.be/xAFGYGVxfp4
+
+---
+
 ## License
 
 MIT
