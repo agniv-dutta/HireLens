@@ -3,8 +3,13 @@ import Header from './components/Header';
 import SummaryBar from './components/SummaryBar';
 import FilterBar from './components/FilterBar';
 import CandidateCard from './components/CandidateCard';
+import localFallbackData from './data/results.json';
 
-const RESULTS_ENDPOINTS = ['/api/results', '/local-results'];
+const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || '').trim().replace(/\/$/, '');
+const RESULTS_ENDPOINTS = [
+  apiBaseUrl ? `${apiBaseUrl}/api/results` : '/api/results',
+  '/local-results',
+];
 
 export default function App() {
   const [candidatesData, setCandidatesData] = useState([]);
@@ -46,12 +51,15 @@ export default function App() {
         }
 
         if (!loaded) {
-          throw lastError || new Error('Unable to load screening results.');
+          if (isMounted) {
+            // Final safety net: use bundled sample data for demo/preview reliability.
+            setCandidatesData(Array.isArray(localFallbackData) ? localFallbackData : []);
+          }
+          throw lastError || new Error('Unable to load live screening results. Showing fallback data');
         }
       } catch (error) {
         if (isMounted) {
           setLoadError(error.message || 'Unable to load screening results.');
-          setCandidatesData([]);
         }
       } finally {
         if (isMounted) {

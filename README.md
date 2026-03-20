@@ -257,6 +257,9 @@ Each candidate in `results.json` has this structure:
 |----------|---------|-------------|
 | `GROQ_API_KEY` | *(required)* | Your Groq API key from console.groq.com |
 | `GROQ_MODEL` | `llama-3.3-70b-versatile` | Groq model to use for screening |
+| `VITE_API_BASE_URL` | *(optional)* | Frontend API base URL for production deploys (example: `https://your-backend-domain.com`) |
+
+For local development, `VITE_API_BASE_URL` is not required because Vite proxy forwards `/api/*` to `http://127.0.0.1:8000`.
 
 ---
 
