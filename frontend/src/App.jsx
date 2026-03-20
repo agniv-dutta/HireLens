@@ -4,6 +4,8 @@ import SummaryBar from './components/SummaryBar';
 import FilterBar from './components/FilterBar';
 import CandidateCard from './components/CandidateCard';
 
+const RESULTS_ENDPOINTS = ['/api/results', '/local-results'];
+
 export default function App() {
   const [candidatesData, setCandidatesData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -19,14 +21,32 @@ export default function App() {
         setIsLoading(true);
         setLoadError('');
 
-        const response = await fetch('/api/results');
-        if (!response.ok) {
-          throw new Error(`Failed to load results (${response.status})`);
+        let loaded = false;
+        let lastError = null;
+
+        for (const endpoint of RESULTS_ENDPOINTS) {
+          try {
+            const response = await fetch(endpoint);
+            if (!response.ok) {
+              throw new Error(`Failed to load results (${response.status})`);
+            }
+
+            const data = await response.json();
+            const normalized = Array.isArray(data) ? data : (Array.isArray(data.results) ? data.results : []);
+
+            if (isMounted) {
+              setCandidatesData(normalized);
+            }
+
+            loaded = true;
+            break;
+          } catch (error) {
+            lastError = error;
+          }
         }
 
-        const data = await response.json();
-        if (isMounted) {
-          setCandidatesData(Array.isArray(data) ? data : []);
+        if (!loaded) {
+          throw lastError || new Error('Unable to load screening results.');
         }
       } catch (error) {
         if (isMounted) {
@@ -93,7 +113,7 @@ export default function App() {
         )}
         {loadError && (
           <div className="rounded-2xl bg-red-50 border border-red-200 p-6 text-red-700">
-            {loadError}. Start the backend API server and retry.
+            {loadError}. Run backend/main.py once or start backend/server.py and retry.
           </div>
         )}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
