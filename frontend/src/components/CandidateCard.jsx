@@ -68,11 +68,15 @@ export default function CandidateCard({ candidate }) {
             ))}
           </ul>
         </div>
-      </div>
 
-      {/* Summary Footer */}
-      <div className="px-5 py-3.5 bg-slate-50 border-t border-slate-100">
-        <p className="text-xs text-slate-500 leading-relaxed line-clamp-2">{summary}</p>
+        {/* Divider */}
+        <div className="border-t border-slate-200"></div>
+
+        {/* AI Summary */}
+        <div>
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">AI Summary</p>
+          <p className="text-sm text-gray-500 italic leading-relaxed">{summary}</p>
+        </div>
       </div>
     </div>
   );
