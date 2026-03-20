@@ -1,0 +1,22 @@
+Meera Pillai
+Email: meera.pillai@example.com
+Location: Chennai, India
+
+Summary:
+Backend engineer specializing in distributed systems and API design. 3 years experience building scalable systems. 
+Mentored 5 junior engineers. Expert in system architecture and performance optimization.
+
+Skills:
+Python, Java, Django, REST APIs, PostgreSQL, MongoDB, Redis, Microservices, Docker, AWS, System Design
+
+Experience:
+- Designed and built high-availability REST APIs serving 10M+ users
+- Mentored 5 junior engineers from design to production
+- Optimized database queries, improving response times by 40%
+- Worked on distributed systems handling billions of requests
+
+Education:
+B.Tech in Information Technology
+
+Certifications:
+- AWS Certified Developer Associate

@@ -7,6 +7,9 @@ from screener import run_screening
 from utils import save_results_to_csv, save_results_to_json
 
 
+BACKEND_DIR = Path(__file__).resolve().parent
+
+
 def _build_ranked_table(results):
     """Create a Rich table showing ranked candidates."""
     table = Table(title="HireLens Resume Screening Results")
@@ -35,7 +38,7 @@ def main():
     try:
         results, errors = run_screening()
 
-        output_dir = Path("backend/output")
+        output_dir = BACKEND_DIR / "output"
         json_path = output_dir / "results.json"
         csv_path = output_dir / "results.csv"
 

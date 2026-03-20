@@ -1,0 +1,22 @@
+Nina Gupta
+Email: nina.gupta@example.com
+Location: Bangalore, India
+
+Summary:
+Data scientist with 2 years experience in Python, SQL, and data visualization using Power BI. 
+Strong in statistical analysis and data-driven decision making. Familiar with automation tools.
+
+Skills:
+Python, SQL, Power BI, Pandas, NumPy, Scikit-learn, JavaScript, Zapier, Make, Linux, Git, Excel
+
+Experience:
+- Built dashboards in Power BI for C-level executives
+- Automated manual HR processes using Zapier and Make
+- Analyzed 100+ datasets using Python and SQL
+- Created data visualizations for 50+ reports
+
+Education:
+B.Tech in Statistics
+
+Certifications:
+- Microsoft Power BI Data Analyst

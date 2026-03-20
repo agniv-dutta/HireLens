@@ -1,1 +1,39 @@
-Paste the target job description here.
+Job Title: AI Automation Intern
+Company: TechCorp Solutions
+Location: Remote / Hybrid
+Duration: 3 Months (with possibility of extension)
+
+About the Role:
+We are looking for a motivated AI Automation Intern to join our HR Tech team.
+You will help build and improve AI-powered tools that streamline hiring,
+onboarding, and internal workflows.
+
+Responsibilities:
+- Build and maintain AI-powered automation pipelines
+- Integrate LLMs (GPT, Gemini, Claude) into existing workflows
+- Work with APIs, Python scripts, and no-code tools
+- Analyze and visualize data from hiring and HR systems
+- Document systems and present findings clearly
+
+Required Skills:
+- Python (intermediate level)
+- Familiarity with LLM APIs (OpenAI, Gemini, Groq, or similar)
+- Basic understanding of REST APIs and JSON
+- Problem-solving and systems thinking
+- Good written communication skills
+
+Preferred Skills:
+- Experience with automation tools (Zapier, Make, n8n)
+- Knowledge of data visualization (Power BI, Google Sheets, or similar)
+- Prior internship or project experience in AI/ML
+- Familiarity with prompt engineering
+- Experience with no-code/low-code tools
+
+Education:
+- Pursuing or recently completed B.Tech / BCA / BSc in CS, IT, or related field
+
+What We Offer:
+- Hands-on experience with real AI systems
+- Mentorship from senior engineers
+- Certificate of completion
+- Pre-placement interview opportunity for top performers

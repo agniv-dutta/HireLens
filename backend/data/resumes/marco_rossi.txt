@@ -1,0 +1,22 @@
+Marco Rossi
+Email: marco.rossi@example.com
+Location: Milan, Italy
+
+Summary:
+Senior Python developer with 4 years experience but primarily focused on backend services.
+Limited exposure to modern LLM APIs or AI automation. Prefers backend-only roles.
+
+Skills:
+Python, Django, PostgreSQL, Docker, Linux, Git, Celery, RabbitMQ, Apache, MySQL, REST APIs
+
+Experience:
+- Developed enterprise Python Django applications
+- Managed databases for production systems
+- Implemented task queues and background jobs
+- Code review and mentoring
+
+Education:
+Master's in Computer Science
+
+Interests:
+Backend optimization, database performance, contract-based work arrangements

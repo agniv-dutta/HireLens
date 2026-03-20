@@ -1,0 +1,23 @@
+Liam O'Brien
+Email: liam.obrien@example.com
+Location: Dublin, Ireland
+
+Summary:
+DevOps engineer with strong Kubernetes and infrastructure expertise. 4 years of cloud infrastructure experience.
+Reduced infrastructure costs by 40% through optimization. Strong security mindset.
+
+Skills:
+Kubernetes, Docker, Terraform, Python, AWS, GCP, Jenkins, Prometheus, ELK Stack, Bash, Linux, Security Hardening
+
+Experience:
+- Managed infrastructure for 500+ microservices on Kubernetes
+- Reduced infrastructure costs by 40% through optimization
+- Implemented end-to-end CI/CD pipelines serving 200+ engineers
+- Strong expertise in security hardening and compliance
+
+Education:
+B.S. in Computer Engineering
+
+Certifications:
+- Certified Kubernetes Administrator (CKA)
+- AWS Solutions Architect Professional

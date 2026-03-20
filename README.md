@@ -17,7 +17,7 @@ HireLens/
 │   │   ├── results.json    # structured output consumed by frontend
 │   │   └── results.csv     # optional reference output
 │   ├── requirements.txt
-│   └── .env                # GEMINI_API_KEY lives here
+│   └── .env                # GROQ_API_KEY lives here
 ├── frontend/
 │   └── placeholder.txt
 └── README.md
@@ -35,7 +35,7 @@ pip install -r backend/requirements.txt
 3. Add your key in `backend/.env`:
 
 ```env
-GEMINI_API_KEY=your_real_key_here
+GROQ_API_KEY=your_real_key_here
 ```
 
 4. Paste your target job description in `backend/data/jd.txt`.
@@ -47,8 +47,31 @@ GEMINI_API_KEY=your_real_key_here
 python backend/main.py
 ```
 
+## Integrated Frontend + Backend (Recommended)
+
+Run backend API server in one terminal:
+
+```bash
+python backend/server.py
+```
+
+Run frontend app in another terminal:
+
+```bash
+cd frontend
+npm run dev
+```
+
+The frontend fetches live data from `GET /api/results` via Vite proxy.
+
+Optional: trigger a fresh screen run through API:
+
+```bash
+curl -X POST http://127.0.0.1:8000/api/screen
+```
+
 The backend will:
-- Call Gemini (`gemini-2.0-flash`) for each resume
+- Call Groq (`llama-3.3-70b-versatile`) for each resume
 - Rank candidates by `match_score`
 - Write output to `backend/output/results.json` and `backend/output/results.csv`
 - Print a summary table in the terminal

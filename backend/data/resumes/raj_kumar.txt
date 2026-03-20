@@ -1,0 +1,24 @@
+Raj Kumar
+Email: raj.kumar@example.com
+Location: Hyderabad, India
+
+Summary:
+Recent B.Tech graduate with strong Python fundamentals and interest in AI/ML. Completed 2 internships in software development.
+Good grasp of REST APIs and basic cloud concepts. Active in hackathons.
+
+Skills:
+Python, FastAPI, Flask, Django, PostgreSQL, SQLite, Git, Basic AWS, REST APIs, JSON, Linux
+
+Experience:
+- Built REST APIs for internal tools during internship at TechCorp
+- Learned Groq and OpenAI API integration in college projects
+- Participated in 5 hackathons, won 2 awards
+- Completed coursework in Data Structures, Databases, Web Development
+
+Education:
+B.Tech in Computer Science (Pursuing)
+
+Projects:
+- AI Chatbot using OpenAI API (Python + Flask)
+- Resume Parser using Groq API
+- Dashboard for analytics using Python and Matplotlib

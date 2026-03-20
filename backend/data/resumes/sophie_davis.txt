@@ -1,0 +1,26 @@
+Sophie Davis
+Email: sophie.davis@example.com
+Location: San Francisco, USA
+
+Summary:
+AI/ML engineer with 1 year of hands-on experience with LLMs. Worked extensively with OpenAI, Gemini, and Groq APIs.
+Strong in prompt engineering, RAG systems, and automation pipelines.
+
+Skills:
+Python, JavaScript, LLM APIs (OpenAI, Gemini, Groq), Prompt Engineering, FastAPI, Flask, PostgreSQL, 
+LangChain, Pinecone, Git, Zapier basics, Google Sheets API, REST APIs
+
+Experience:
+- Built AI automation pipelines using Groq and OpenAI APIs
+- Implemented RAG system for customer support automation
+- Fine-tuned prompts for 20+ use cases
+- Integrated multiple LLM APIs into production systems
+- Strong portfolio on GitHub
+
+Education:
+B.S. in Computer Science (Recent Graduate)
+
+Projects:
+- AI Resume Screener using Groq API
+- Chatbot integration with multiple LLM providers
+- Prompt optimization framework

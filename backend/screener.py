@@ -3,16 +3,17 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-import google.generativeai as genai
+from groq import Groq
 
 from utils import extract_text_from_pdf, extract_text_from_txt
 
 
 RECOMMENDATIONS = {"Strong Fit", "Moderate Fit", "Not Fit"}
+BACKEND_DIR = Path(__file__).resolve().parent
 
 
 def _build_user_prompt(job_description, resume_text, resume_filename):
-    """Build the user message asking Gemini for strict JSON output."""
+    """Build the user message asking the model for strict JSON output."""
     return (
         "Analyze the resume against the job description and return exactly one JSON object.\n"
         "Do not include any extra keys and ensure valid JSON.\n\n"
@@ -101,23 +102,29 @@ def _validate_candidate_schema(candidate, fallback_name):
     return cleaned
 
 
-def _screen_single_resume(model, job_description, resume_path):
-    """Call Gemini for one resume and return validated candidate JSON."""
+def _screen_single_resume(client, model, job_description, resume_path):
+    """Call Groq for one resume and return validated candidate JSON."""
     resume_text = _extract_resume_text(resume_path)
 
     if not resume_text:
         raise ValueError(f"Resume appears empty: {resume_path.name}")
 
-    response = model.generate_content(
-        _build_user_prompt(job_description, resume_text, resume_path.name),
-        generation_config={
-            "temperature": 0,
-            "max_output_tokens": 700,
-            "response_mime_type": "application/json",
-        },
+    response = client.chat.completions.create(
+        model=model,
+        messages=[
+            {
+                "role": "system",
+                "content": _get_system_prompt(),
+            },
+            {
+                "role": "user",
+                "content": _build_user_prompt(job_description, resume_text, resume_path.name),
+            },
+        ],
+        temperature=0.2,
     )
 
-    response_text = (getattr(response, "text", "") or "").strip()
+    response_text = ((response.choices[0].message.content) or "").strip()
 
     if not response_text.strip():
         raise ValueError(f"Empty model response for {resume_path.name}")
@@ -132,24 +139,28 @@ def _screen_single_resume(model, job_description, resume_path):
 
 
 def run_screening(
-    resumes_dir="backend/data/resumes",
-    jd_path="backend/data/jd.txt",
-    model="gemini-2.0-flash",
+    resumes_dir="data/resumes",
+    jd_path="data/jd.txt",
+    model="llama-3.3-70b-versatile",
 ):
     """Screen all resumes in a directory and return sorted candidate results plus errors."""
-    load_dotenv()
+    # Always load the backend .env file regardless of current working directory.
+    load_dotenv(BACKEND_DIR / ".env")
 
-    api_key = os.getenv("GEMINI_API_KEY", "").strip()
+    model = os.getenv("GROQ_MODEL", model).strip() or model
+
+    api_key = os.getenv("GROQ_API_KEY", "").strip()
     if not api_key or api_key == "your_key_here":
         raise RuntimeError(
-            "GEMINI_API_KEY is missing or placeholder in backend/.env. "
+            "GROQ_API_KEY is missing or placeholder in backend/.env. "
             "Please set a valid API key."
         )
 
-    # Configure Gemini client from environment for all subsequent calls.
-    genai.configure(api_key=api_key)
+    client = Groq(api_key=api_key)
 
     jd_file = Path(jd_path)
+    if not jd_file.is_absolute():
+        jd_file = BACKEND_DIR / jd_file
     if not jd_file.exists():
         raise FileNotFoundError(f"Job description file not found: {jd_file}")
 
@@ -158,6 +169,8 @@ def run_screening(
         raise ValueError("Job description file is empty. Please update backend/data/jd.txt.")
 
     resumes_path = Path(resumes_dir)
+    if not resumes_path.is_absolute():
+        resumes_path = BACKEND_DIR / resumes_path
     if not resumes_path.exists() or not resumes_path.is_dir():
         raise FileNotFoundError(f"Resumes folder not found: {resumes_path}")
 
@@ -168,18 +181,14 @@ def run_screening(
     if not supported_files:
         raise ValueError("No supported resume files found in backend/data/resumes (expected .pdf or .txt).")
 
-    model_instance = genai.GenerativeModel(
-        model,
-        system_instruction=_get_system_prompt(),
-    )
-
     results = []
     errors = []
 
     for resume_file in supported_files:
         try:
             candidate = _screen_single_resume(
-                model=model_instance,
+                client=client,
+                model=model,
                 job_description=job_description,
                 resume_path=resume_file,
             )

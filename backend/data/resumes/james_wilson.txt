@@ -1,0 +1,22 @@
+James Wilson
+Email: james.wilson@example.com
+Location: Dallas, USA
+
+Summary:
+No-code/Low-code specialist with 3 years experience. Expert in Zapier, Make, n8n automation.
+Strong in workflow design. Limited programming background.
+
+Skills:
+Zapier, Make, n8n, No-code workflows, Google Sheets, Airtable, APIs (basic), JSON (basic), Business Process Design
+
+Experience:
+- Designed 50+ automation workflows with Zapier and Make
+- Reduced manual tasks by 70% through no-code automation
+- Trained teams on automation tools
+- Minimal programming experience
+
+Education:
+Diploma in IT (Non-technical path)
+
+Interests:
+No-code automation, workflow design, business process improvement

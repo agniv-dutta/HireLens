@@ -1,0 +1,26 @@
+Priya Sharma
+Email: priya.sharma@example.com
+Location: Pune, India
+
+Summary:
+Full-stack developer with 5+ years of experience in React, Node.js, and Python. Published open-source contributor. 
+Strong in system design and cross-functional team leadership.
+
+Skills:
+JavaScript, React, Node.js, Python, PostgreSQL, Docker, Kubernetes, AWS, GCP, Git, CI/CD, MongoDB, GraphQL
+
+Experience:
+- Led cross-functional teams of 10+ engineers on multiple projects
+- Built high-availability APIs serving 10M+ users
+- Published several open-source projects on GitHub with 500+ stars
+- Mentored 5 junior engineers
+
+Education:
+B.Tech in Computer Science from top-tier institution
+
+Certifications:
+- AWS Solutions Architect Associate
+- Kubernetes Administrator (CKA)
+
+Interests:
+Open-source contributions, system design, tech mentoring
